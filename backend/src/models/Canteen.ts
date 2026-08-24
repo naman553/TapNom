@@ -30,15 +30,15 @@ const canteenSchema = new mongoose.Schema(
       default: ""
     },
 
-    openingTime: {
-      type: String,
-      required: true
-    },
+  openingTime: {
+  type: String,
+  default: ""
+},
 
-    closingTime: {
-      type: String,
-      required: true
-    },
+closingTime: {
+  type: String,
+  default: ""
+},
 
     isActive: {
       type: Boolean,

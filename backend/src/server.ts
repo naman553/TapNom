@@ -3,6 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import connectDB from "./config/db";
 import collegeRoutes from "./routes/collegeRoutes"
+import canteenRoutes from "./routes/canteenRoutes";
 
 dotenv.config();
 
@@ -18,7 +19,12 @@ app.get("/", (req, res) => {
   });
 });
 
+
+
 app.use("/api/colleges" , collegeRoutes);
+app.use("/api/canteens", canteenRoutes);
+
+
 const PORT = process.env.PORT || 5000;
 
 const startServer = async (): Promise<void> => {

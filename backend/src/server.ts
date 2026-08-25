@@ -4,7 +4,7 @@ import dotenv from "dotenv";
 import connectDB from "./config/db";
 import collegeRoutes from "./routes/collegeRoutes"
 import canteenRoutes from "./routes/canteenRoutes";
-
+import categoryRoutes from "./routes/categoryRoutes"
 dotenv.config();
 
 const app = express();
@@ -23,7 +23,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/colleges" , collegeRoutes);
 app.use("/api/canteens", canteenRoutes);
-
+app.use("api/categories" , categoryRoutes);
 
 const PORT = process.env.PORT || 5000;
 

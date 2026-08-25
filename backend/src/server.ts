@@ -25,6 +25,8 @@ app.get("/", (req, res) => {
 
 app.use("/api/colleges" , collegeRoutes);
 app.use("/api/canteens", canteenRoutes);
+app.use("/api/canteens", categoryRoutes);
+app.use("/api/canteens", menuItemRoutes);
 
 
 const PORT = process.env.PORT || 5000;

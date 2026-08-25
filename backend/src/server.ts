@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import connectDB from "./config/db";
 import collegeRoutes from "./routes/collegeRoutes"
 import canteenRoutes from "./routes/canteenRoutes";
+import categoryRoutes from "./routes/categoryRoutes"
 import menuItemRoutes from "./routes/menuItemRoutes";
 
 dotenv.config();
@@ -24,7 +25,6 @@ app.get("/", (req, res) => {
 
 app.use("/api/colleges" , collegeRoutes);
 app.use("/api/canteens", canteenRoutes);
-app.use("/api/menu-items", menuItemRoutes);
 
 
 const PORT = process.env.PORT || 5000;

@@ -49,7 +49,8 @@ export const getMenuItemController = async(
         canteenId,
         categoryId
         );
-
+console.log("canteenId:", canteenId);
+console.log("categoryId:", categoryId);
          res.status(200).json({
       success: true,
       data: menuItems

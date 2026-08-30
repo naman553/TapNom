@@ -1,8 +1,10 @@
 {
   "dependencies": {
-    "jsonwebtoken": "^9.0.3"
+    "jsonwebtoken": "^9.0.3",
+    "qrcode": "^1.5.4"
   },
   "devDependencies": {
-    "@types/jsonwebtoken": "^9.0.10"
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/qrcode": "^1.5.6"
   }
 }

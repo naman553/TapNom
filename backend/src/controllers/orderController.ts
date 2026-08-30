@@ -15,25 +15,27 @@ export const createOrderController = async (
       return;
     }
 
-    const order = await createOrder(
+    const result = await createOrder(
       req.user.userId,
       req.body
     );
 
-    if (!order) {
-      res.status(400).json({
-        success: false,
-        message: "Invalid canteen or menu items"
-      });
+   if (!result) {
+  res.status(400).json({
+    success: false,
+    message: "Invalid canteen or menu items"
+  });
 
-      return;
-    }
+  return;
+}
 
     res.status(201).json({
-      success: true,
-      data: order
-    });
-  } catch (error) {
+  success: true,
+  data: {
+    order: result.order,
+    pickupPin: result.pickupPin
+  }
+})} catch (error) {
     console.error("Error creating order:", error);
 
     res.status(500).json({

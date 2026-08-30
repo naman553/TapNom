@@ -7,6 +7,10 @@ const menuItemSchema = new mongoose.Schema(
       ref: "Canteen",
       required: true
     },
+    isActive: {
+  type: Boolean,
+  default: true
+},
 
     categoryId: {
       type: mongoose.Schema.Types.ObjectId,

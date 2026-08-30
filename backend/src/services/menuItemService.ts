@@ -51,7 +51,7 @@ export const getMenuItems = async(
   if (categoryId) {
     filter.categoryId = categoryId;
   }
-
+console.log("filter:", filter);
   return await MenuItem.find(filter).sort({name: 1});
 };
 

@@ -16,11 +16,10 @@ const userSchema = new mongoose.Schema(
       trim: true
     },
 
-    password: {
-      type: String,
-      required: true,
-      minlength: 6
-    },
+    passwordHash: {
+  type: String,
+  required: true
+},
 
     role: {
       type: String,
@@ -31,15 +30,13 @@ const userSchema = new mongoose.Schema(
     collegeId: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "College",
-      required: true
+
     },
 
-    canteenIds: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Canteen"
-      }
-    ]
+    canteenId: {
+  type: mongoose.Schema.Types.ObjectId,
+  ref: "Canteen"
+}
   },
   {
     timestamps: true

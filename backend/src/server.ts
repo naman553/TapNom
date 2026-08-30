@@ -7,7 +7,8 @@ import canteenRoutes from "./routes/canteenRoutes";
 import categoryRoutes from "./routes/categoryRoutes"
 import menuItemRoutes from "./routes/menuItemRoutes";
 import authRoutes from "./routes/authRoutes";
-import userRoutes from "./routes/userRoutes"
+import userRoutes from "./routes/userRoutes";
+import orderRoutes from "./routes/orderRoutes";
 
 dotenv.config();
 
@@ -31,6 +32,7 @@ app.use("/api/category", categoryRoutes);
 app.use("/api/menu-item", menuItemRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
+app.use("/api/orders", orderRoutes);
 
 const PORT = process.env.PORT || 5000;
 

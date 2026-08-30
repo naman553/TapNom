@@ -1,6 +1,7 @@
 import Canteen from "../models/Canteen";
 import MenuItem from "../models/MenuItem";
 import Order from "../models/Order";
+import { generatePickupCredentials } from "./pickupService";
 import { getBasePriority } from "./priorityService";
 
 export const createOrder = async (
@@ -57,6 +58,14 @@ const totalAmount = orderItems.reduce(
 
 const basePriority = getBasePriority(orderData.orderType);
 
+
+const {
+  qrToken,
+  pickupPin,
+  pickupPinHash
+} = await generatePickupCredentials();
+
+
 const order = await Order.create({
     userId,
     collegeId : canteen.collegeId,
@@ -65,12 +74,15 @@ const order = await Order.create({
     totalAmount,
     orderType : orderData.orderType,
     basePriority,
-    pickupSlot: orderData.pickUpSlot 
+    pickupSlot: orderData.pickUpSlot,
+     qrToken,
+  qrGeneratedAt: new Date(),
+  pickupPinHash
 }) 
 
 
 
-return order ;
+return {order, pickupPin} ;
 
 
 

@@ -133,7 +133,8 @@ const orderSchema = new mongoose.Schema(
 
     pickupPinHash: {
     type: String,
-    default: null
+    default: null,
+    select : false 
     },
 
     pickupVerifiedAt: {

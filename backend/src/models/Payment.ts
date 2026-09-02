@@ -35,7 +35,16 @@ const paymentSchema = new mongoose.Schema(
     transactionId: {
       type: String,
       default: ""
-    }
+    },
+    razorpayOrderId: {
+  type: String,
+  default: ""
+},
+
+razorpayPaymentId: {
+  type: String,
+  default: ""
+},
   },
   {
     timestamps: true

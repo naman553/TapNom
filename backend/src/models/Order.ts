@@ -12,7 +12,11 @@ const orderItemSchema = new mongoose.Schema(
       type: String,
       required: true
     },
-
+preparationTime: {
+  type: Number,
+  required: true,
+  min: 0
+},
     price: {
       type: Number,
       required: true,

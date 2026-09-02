@@ -4,6 +4,7 @@ import { authMiddleware } from "../middleware/authMiddleware";
 import { getStaffOrdersController } from "../controllers/staffOrderController";
 import { updateOrderStatusController } from "../controllers/orderStatusController";
 import { verifyPickupPinController } from "../controllers/pickupController";
+import { markCashPaymentAsPaidController, markOnlinePaymentAsPaidController, verifyRazorpayPaymentController } from "../controllers/paymentController";
 
 const router = Router();
 
@@ -36,6 +37,22 @@ router.post(
   verifyPickupPinController
 )
 
+router.post(
+  "/:id/payment/cash",
+  authMiddleware,
+  markCashPaymentAsPaidController
+);
+
+router.post(
+  "/payment/:paymentId/mock-success",
+  authMiddleware,
+  markOnlinePaymentAsPaidController
+);
 
 
+router.post(
+  "/payment/verify",
+  authMiddleware,
+  verifyRazorpayPaymentController
+);
 export default router;
